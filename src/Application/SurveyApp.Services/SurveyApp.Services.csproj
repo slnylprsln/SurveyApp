@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\SurveyApp.Entities\SurveyApp.Entities.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SurveyApp.Infrastructure\SurveyApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\SurveyApp.DataTransferObjects\SurveyApp.DataTransferObjects.csproj" />
+  </ItemGroup>
+
+</Project>
