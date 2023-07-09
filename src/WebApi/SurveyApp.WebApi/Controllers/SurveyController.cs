@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using SurveyApp.DataTransferObjects.Requests;
 using SurveyApp.Services.Interfaces;
 
 namespace SurveyApp.WebApi.Controllers
 {
+    //[Authorize(Roles = "Admin,Member")]
     [Route("api/[controller]")]
     [ApiController]
     public class SurveyController : ControllerBase

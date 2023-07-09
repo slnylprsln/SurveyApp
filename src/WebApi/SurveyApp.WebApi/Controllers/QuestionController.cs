@@ -48,7 +48,7 @@ namespace SurveyApp.WebApi.Controllers
             else return Ok(list);
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("{id}/survey")]
         public IActionResult GetQuestionsBySurvey(int id)
         {
             var list = _service.GetQuestionsBySurvey(id);

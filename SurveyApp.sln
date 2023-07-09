@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyApp.Entities", "src\D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyApp.Infrastructure", "src\Infrastructure\SurveyApp.Infrastructure\SurveyApp.Infrastructure.csproj", "{132C5AEB-8A5F-45FA-B5AA-DD5E626D46BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.DataTransferObjects", "src\Application\SurveyApp.DataTransferObjects\SurveyApp.DataTransferObjects.csproj", "{12689412-E825-4770-8AEB-6439552B3200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyApp.DataTransferObjects", "src\Application\SurveyApp.DataTransferObjects\SurveyApp.DataTransferObjects.csproj", "{12689412-E825-4770-8AEB-6439552B3200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.Services", "src\Application\SurveyApp.Services\SurveyApp.Services.csproj", "{AED9C9FF-AFE1-47AB-9D43-1614FD66CEC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyApp.Services", "src\Application\SurveyApp.Services\SurveyApp.Services.csproj", "{AED9C9FF-AFE1-47AB-9D43-1614FD66CEC9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F76CA825-7E93-4596-BB59-8650B08A3C3D}"
 EndProject
@@ -17,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E3EDE7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6158F02A-4C13-40D5-8F7D-05DCF78ABC21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.WebApi", "src\WebApi\SurveyApp.WebApi\SurveyApp.WebApi.csproj", "{D38685FE-E350-4B46-9093-2ECB5D3E89DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyApp.WebApi", "src\WebApi\SurveyApp.WebApi\SurveyApp.WebApi.csproj", "{D38685FE-E350-4B46-9093-2ECB5D3E89DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{D6E604E3-C59B-4BAD-BDEC-B3D9212434BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.WebUI", "src\WebUI\SurveyApp.WebUI\SurveyApp.WebUI.csproj", "{C85D4285-CEB3-4DB0-B66E-3785390DDDB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUI", "WebUI", "{A770BA53-10EC-49A0-9C43-3D06895D674E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,10 @@ Global
 		{D38685FE-E350-4B46-9093-2ECB5D3E89DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D38685FE-E350-4B46-9093-2ECB5D3E89DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D38685FE-E350-4B46-9093-2ECB5D3E89DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85D4285-CEB3-4DB0-B66E-3785390DDDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85D4285-CEB3-4DB0-B66E-3785390DDDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85D4285-CEB3-4DB0-B66E-3785390DDDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85D4285-CEB3-4DB0-B66E-3785390DDDB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,7 @@ Global
 		{12689412-E825-4770-8AEB-6439552B3200} = {F76CA825-7E93-4596-BB59-8650B08A3C3D}
 		{AED9C9FF-AFE1-47AB-9D43-1614FD66CEC9} = {F76CA825-7E93-4596-BB59-8650B08A3C3D}
 		{D38685FE-E350-4B46-9093-2ECB5D3E89DA} = {D6E604E3-C59B-4BAD-BDEC-B3D9212434BC}
+		{C85D4285-CEB3-4DB0-B66E-3785390DDDB3} = {A770BA53-10EC-49A0-9C43-3D06895D674E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {864CE7A7-3DDF-4133-91F9-574165FAA9B8}

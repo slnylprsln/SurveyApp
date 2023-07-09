@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Anket Soruları</title>
+</head>
+<body>
+    <h1>Anket Soruları</h1>
+    <div id="sorular"></div>
+
+    <script>
+        var anketID = 1;
+
+        fetch('https://localhost:7001/api/Question/' + anketID + '/survey')
+            .then(response => response.json())
+            .then(data => {
+                var sorularDiv = document.getElementById("sorular");
+
+                data.forEach(soru => {
+                    var category = soru.Category;
+                    var soruMetni = soru.Content;
+
+                    var soruDiv = document.createElement("div");
+                    soruDiv.className = "soru";
+
+                    var soruMetniP = document.createElement("p");
+                    soruMetniP.textContent = soruMetni;
+                    soruDiv.appendChild(soruMetniP);
+
+                    if (category === "SingleLineText") {
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        soruDiv.appendChild(input);
+                    } else if (category === "MultipleLineText") {
+                        var textarea = document.createElement("textarea");
+                        soruDiv.appendChild(textarea);
+                    } else if (category === "MultipleChoice") {
+                        var secenekler = ["Seçenek 1", "Seçenek 2", "Seçenek 3"];
+
+                        secenekler.forEach(secenek => {
+                            var input = document.createElement("input");
+                            input.type = "radio";
+                            input.name = soru.Id;
+                            input.value = secenek;
+
+                            var label = document.createElement("label");
+                            label.appendChild(document.createTextNode(secenek));
+
+                            var br = document.createElement("br");
+
+                            soruDiv.appendChild(input);
+                            soruDiv.appendChild(label);
+                            soruDiv.appendChild(br);
+                        });
+                    } else if (category === "Evaluation") {
+                        var input = document.createElement("input");
+                        input.type = "range";
+                        input.min = "1";
+                        input.max = "10";
+                        input.step = "1";
+
+                        soruDiv.appendChild(input);
+                    }
+
+                    sorularDiv.appendChild(soruDiv);
+                });
+            })
+            .catch(error => {
+                console.log("Hata oluştu:", error);
+            });
+    </script>
+</body>
+</html>
