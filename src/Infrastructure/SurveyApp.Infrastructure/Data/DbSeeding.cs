@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using SurveyApp.Entities;
 using System;
 using System.Collections.Generic;
@@ -55,9 +56,18 @@ namespace SurveyApp.Infrastructure.Data
                     new() { Content = "Uygulamamızla ilgili şikayetleriniz nelerdir?", Category = Category.MultipleLineText, SurveyId = 1 },
                     new() { Content = "Uygulamamıza önerileriniz nelerdir?", Category = Category.MultipleLineText, SurveyId = 1 },
                     new() { Content = "Uygulamamızı 1 ve 10 arasında puanlayınız.", Category = Category.Evaluation, SurveyId = 1 },
-                    new() { Content = "Uygulamamızdan nasıl haberdar oldunuz?", Category = Category.MultipleChoice, SurveyId = 1, Options = new List <string>(){"Arkadaş/Tanıdık", "Televizyon", "Sosyal Medya", "Billboard"} },
                     new() { Content = "Uygulamamızı arkadaşlarınıza önerir misiniz?", Category = Category.SingleLineText, SurveyId = 1 },
                 };
+
+                var q = new Question()
+                {
+                    Content = "Uygulamamızdan nasıl haberdar oldunuz?",
+                    Category = Category.MultipleChoice,
+                    SurveyId = 1
+                };
+                var options = new List<string>() { "Arkadaş/Tanıdık", "Televizyon", "Sosyal Medya", "Billboard" };
+                q.SetOptions(options);
+                questions.Add(q);
 
                 context.Questions.AddRange(questions);
                 context.SaveChanges();
@@ -72,8 +82,8 @@ namespace SurveyApp.Infrastructure.Data
                     new() { SurveyId = 1, QuestionId = 1, Answer = "Uygulamanızın arayüzü çok karışık ve kullanıcı dostu değil. Menüler ve sekmeler anlaşılması zor ve gezinmek zaman alıyor. Ayrıca, uygulama çok yavaş çalışıyor ve sık sık donuyor. Bu da kullanıcı deneyimini olumsuz etkiliyor." },
                     new() { SurveyId = 1, QuestionId = 2, Answer = "Uygulamaya daha fazla kullanıcı geri bildirimi almak için anketler veya geri bildirim formları gibi araçlar ekleyin." },
                     new() { SurveyId = 1, QuestionId = 3, Answer = "7" },
-                    new() { SurveyId = 1, QuestionId = 4, Answer = "Sosyal Medya, Televizyon" },
-                    new() { SurveyId = 1, QuestionId = 5, Answer = "Evet öneririm" },
+                    new() { SurveyId = 1, QuestionId = 4, Answer = "Evet öneririm" },
+                    new() { SurveyId = 1, QuestionId = 5, Answer = "Sosyal Medya, Televizyon" }
                 };
 
                 context.SurveyResponses.AddRange(surveyResponses);

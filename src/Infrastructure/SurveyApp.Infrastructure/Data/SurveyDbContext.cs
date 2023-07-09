@@ -19,5 +19,29 @@ namespace SurveyApp.Infrastructure.Data
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Survey>()
+                .HasMany(s => s.Questions)
+                .WithOne(q => q.Survey)
+                .HasForeignKey(q => q.SurveyId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Surveys)
+                .WithOne(s => s.User)
+                .HasForeignKey(s => s.UserId);
+
+
+            modelBuilder.Entity<SurveyResponse>()
+                .HasOne(sr => sr.Survey)
+                .WithMany()
+                .HasForeignKey(sr => sr.SurveyId);
+
+            modelBuilder.Entity<SurveyResponse>()
+                .HasOne(sr => sr.Question)
+                .WithMany()
+                .HasForeignKey(sr => sr.QuestionId);
+        }
     }
 }

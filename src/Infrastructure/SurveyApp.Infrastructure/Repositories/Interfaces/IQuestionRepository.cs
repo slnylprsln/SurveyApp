@@ -11,6 +11,5 @@ namespace SurveyApp.Infrastructure.Repositories.Interfaces
     {
         public Task<IEnumerable<Question>> GetQuestionsBySurveyAsync(int surveyId);
         public IEnumerable<Question> GetQuestionsBySurvey(int surveyId);
-        public IEnumerable<string> GetOptionsOfQuestion(int questionId);
     }
 }

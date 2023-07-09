@@ -42,9 +42,9 @@ namespace SurveyApp.Services
             await _repository.DeleteAsync(id);
         }
 
-        public SurveyDisplayResponse GetAsync(int id)
+        public SurveyDisplayResponse Get(int id)
         {
-            var found = _repository.GetAsync(id);
+            var found = _repository.Get(id);
             return _mapper.Map<SurveyDisplayResponse>(found);
         }
 

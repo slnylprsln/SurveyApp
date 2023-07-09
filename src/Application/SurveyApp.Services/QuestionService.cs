@@ -42,9 +42,9 @@ namespace SurveyApp.Services
             await _repository.DeleteAsync(id);
         }
 
-        public QuestionDisplayResponse GetAsync(int id)
+        public QuestionDisplayResponse Get(int id)
         {
-            var found = _repository.GetAsync(id);
+            var found = _repository.Get(id);
             return _mapper.Map<QuestionDisplayResponse>(found);
         }
 
@@ -61,10 +61,10 @@ namespace SurveyApp.Services
             return _mapper.Map<UpdateQuestionRequest>(found);
         }
 
-        public async Task<IEnumerable<string>> GetOptionsOfQuestion(int id)
+        public IEnumerable<string> GetOptionsOfQuestion(int id)
         {
-            var options = _repository.GetOptionsOfQuestion(id);
-            return options;
+            var found = _repository.Get(id);
+            return found.GetOptions();
         }
 
         public IEnumerable<QuestionDisplayResponse> GetQuestionsBySurvey(int id)

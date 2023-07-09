@@ -11,9 +11,10 @@ namespace SurveyApp.Infrastructure.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class, IEntity, new()
     {
-        Task<T?> GetAsync(int id);
-        IList<T?> GetAll();
-        Task<IList<T?>> GetAllAsync();
+        Task<T> GetAsync(int id);
+        T Get(int id);
+        IList<T> GetAll();
+        Task<IList<T>> GetAllAsync();
         Task CreateAsync(T entity);
         Task DeleteAsync(int id);
         Task UpdateAsync(T entity);

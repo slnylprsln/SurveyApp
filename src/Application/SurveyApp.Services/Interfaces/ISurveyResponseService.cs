@@ -13,7 +13,7 @@ namespace SurveyApp.Services.Interfaces
     {
         Task CreateAsync(CreateNewSurveyResponseRequest createRequest);
         Task<int> CreateAndReturnIdAsync(CreateNewSurveyResponseRequest createRequest);
-        SurveyResponseDisplayResponse GetAsync(int id);
+        SurveyResponseDisplayResponse Get(int id);
         Task DeleteAsync(int id);
         IEnumerable<SurveyResponseDisplayResponse> GetDisplayResponses();
         Task<bool> IsExists(int id);

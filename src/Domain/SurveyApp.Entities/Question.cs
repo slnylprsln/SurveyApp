@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SurveyApp.Entities
@@ -13,7 +14,17 @@ namespace SurveyApp.Entities
         public int SurveyId { get; set; }
         public Survey Survey { get; set; }
         public Category Category { get; set; }
-        public List<string>? Options { get; set; }
+        public string? Options { get; set; }
+
+        public List<string>? GetOptions()
+        {
+            return JsonSerializer.Deserialize<List<string>>(Options);
+        }
+
+        public void SetOptions(List<string> options)
+        {
+            Options = JsonSerializer.Serialize(options);
+        }
     }
 
     public enum Category

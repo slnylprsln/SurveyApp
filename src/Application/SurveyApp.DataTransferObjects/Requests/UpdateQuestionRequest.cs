@@ -13,6 +13,6 @@ namespace SurveyApp.DataTransferObjects.Requests
         public string? Content { get; set; }
         public int SurveyId { get; set; }
         public Category Category { get; set; }
-        public List<string>? Options { get; set; }
+        public string? Options { get; set; }
     }
 }

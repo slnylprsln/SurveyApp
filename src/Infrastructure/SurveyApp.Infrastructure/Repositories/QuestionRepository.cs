@@ -32,25 +32,24 @@ namespace SurveyApp.Infrastructure.Repositories
             await _surveyDbContext.SaveChangesAsync();
         }
 
-        public async Task<IList<Question?>> GetAllAsync()
+        public async Task<IList<Question>> GetAllAsync()
         {
             return await _surveyDbContext.Questions.ToListAsync();
         }
 
-        public IList<Question?> GetAll()
+        public IList<Question> GetAll()
         {
             return _surveyDbContext.Questions.ToList();
         }
 
-        public async Task<Question?> GetAsync(int id)
+        public Question Get(int id)
         {
-            return await _surveyDbContext.Questions.FirstOrDefaultAsync(c => c.Id == id);
+            return _surveyDbContext.Questions.FirstOrDefault(c => c.Id == id);
         }
 
-        public IEnumerable<string> GetOptionsOfQuestion(int questionId)
+        public async Task<Question> GetAsync(int id)
         {
-            var found = _surveyDbContext.Questions.Find(questionId);
-            return found.Options;
+            return await _surveyDbContext.Questions.FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<IEnumerable<Question>> GetQuestionsBySurveyAsync(int surveyId)

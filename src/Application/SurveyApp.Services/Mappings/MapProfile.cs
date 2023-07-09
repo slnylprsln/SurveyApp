@@ -15,19 +15,19 @@ namespace SurveyApp.Services.Mappings
     { 
         public MapProfile()
         {
-            CreateMap<CreateNewQuestionRequest, Question>();
-            CreateMap<CreateNewSurveyRequest, Survey>();
-            CreateMap<CreateNewUserRequest, User>();
-            CreateMap<CreateNewSurveyResponseRequest, SurveyResponse>();
+            CreateMap<CreateNewQuestionRequest, Question>().ReverseMap();
+            CreateMap<CreateNewSurveyRequest, Survey>().ReverseMap();
+            CreateMap<CreateNewUserRequest, User>().ReverseMap();
+            CreateMap<CreateNewSurveyResponseRequest, SurveyResponse>().ReverseMap();
 
             CreateMap<UpdateQuestionRequest, Question>().ReverseMap();
             CreateMap<UpdateSurveyRequest, Survey>().ReverseMap();
             CreateMap<UpdateUserRequest, User>().ReverseMap();
 
-            CreateMap<Question, QuestionDisplayResponse>();
-            CreateMap<Survey, SurveyDisplayResponse>();
-            CreateMap<User, UserDisplayResponse>();
-            CreateMap<SurveyResponse, SurveyResponseDisplayResponse>();
+            CreateMap<Question, QuestionDisplayResponse>().ReverseMap();
+            CreateMap<Survey, SurveyDisplayResponse>().ReverseMap();
+            CreateMap<User, UserDisplayResponse>().ReverseMap();
+            CreateMap<SurveyResponse, SurveyResponseDisplayResponse>().ReverseMap();
         }
     }
 }

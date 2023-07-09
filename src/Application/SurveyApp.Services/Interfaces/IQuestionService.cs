@@ -12,12 +12,12 @@ namespace SurveyApp.Services.Interfaces
     {
         Task CreateAsync(CreateNewQuestionRequest createRequest);
         Task<int> CreateAndReturnIdAsync(CreateNewQuestionRequest createRequest);
-        QuestionDisplayResponse GetAsync(int id);
+        QuestionDisplayResponse Get(int id);
         Task<UpdateQuestionRequest> GetForUpdate(int id);
         Task DeleteAsync(int id);
         IEnumerable<QuestionDisplayResponse> GetDisplayResponses();
         IEnumerable<QuestionDisplayResponse> GetQuestionsBySurvey(int id);
-        Task<IEnumerable<string>> GetOptionsOfQuestion(int id);
+        IEnumerable<string> GetOptionsOfQuestion(int id);
         Task Update(UpdateQuestionRequest updateRequest);
         Task<bool> IsExists(int id);
     }

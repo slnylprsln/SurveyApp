@@ -32,17 +32,22 @@ namespace SurveyApp.Infrastructure.Repositories
             await _surveyDbContext.SaveChangesAsync();
         }
 
-        public async Task<IList<Survey?>> GetAllAsync()
+        public async Task<IList<Survey>> GetAllAsync()
         {
             return await _surveyDbContext.Surveys.ToListAsync();
         }
 
-        public IList<Survey?> GetAll()
+        public IList<Survey> GetAll()
         {
             return _surveyDbContext.Surveys.ToList();
         }
 
-        public async Task<Survey?> GetAsync(int id)
+        public Survey Get(int id)
+        {
+            return _surveyDbContext.Surveys.FirstOrDefault(c => c.Id == id);
+        }
+
+        public async Task<Survey> GetAsync(int id)
         {
             return await _surveyDbContext.Surveys.FirstOrDefaultAsync(c => c.Id == id);
         }
